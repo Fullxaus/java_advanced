@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'checkstyle'
+}
+
+group = 'ru.mentee.power'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains:annotations:24.0.1"
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+    testImplementation 'org.assertj:assertj-core:3.21.0'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy tasks.named('jacocoTestReport')
+}
+
+// ----- JaCoCo -----
+jacoco {
+    toolVersion = "0.8.10"
+}
+
+jacocoTestReport {
+    dependsOn tasks.named('test')
+    reports {
+        xml.required = false
+        csv.required = false
+        html.required = true
+    }
+}
+
+checkstyle {
+    toolVersion = '10.12.5'
+    //config/checkstyle/google_checks.xml
+    configFile = file("${rootDir}/config/checkstyle/google_checks.xml")
+
+}
+
+
+
+// Интегрируем checkstyle в общую задачу проверки
+tasks.named('check') {
+    dependsOn tasks.named('checkstyleMain')
+    dependsOn tasks.named('checkstyleTest')}
