@@ -5,6 +5,23 @@ public class InventoryItem {
     protected String sku; // Изменим на protected для доступа из наследников
     protected String name;
     protected int quantity;
+
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public void setUnitPrice(double unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
     protected double unitPrice;
 
     public InventoryItem() {
