@@ -1,6 +1,6 @@
 package ru.mentee.power.oop.abstraction.employee;
 
-import java.util.Objects;
+    import java.util.Objects;
 
 public abstract class Employee {
     private final int id;
