@@ -1,7 +1,7 @@
 package ru.mentee.power.oop.constructors;
 
 public class InventoryItem {
-    // default (package-private) поля
+
     String sku;
     String name;
     int quantity;
