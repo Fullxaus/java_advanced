@@ -2,7 +2,7 @@ package ru.mentee.power.oop.abstraction.employee;
 
     import java.util.Objects;
 
-public abstract class Employee {
+    public abstract class Employee {
     private final int id;
     private String name;
 
