@@ -1,11 +1,8 @@
 package ru.mentee.power.collections.arraylist;
 
 import java.util.Arrays;
-import java.util.Collection; // Понадобится для конструктора и addAll
-import java.util.Iterator;   // Позже для реализации Iterable
-import java.util.List;      // Интерфейс, который мы (частично) реализуем
-import java.util.ListIterator; // Позже
-import java.util.NoSuchElementException; // Для итератора
+import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
 public class SimpleArrayList<E> {
@@ -128,6 +125,30 @@ public class SimpleArrayList<E> {
 
     public Object[] toArray() {
         return Arrays.copyOf(elementData, size);
+    }
+
+
+
+    /**
+     * Возвращает первый элемент списка.
+     * @throws NoSuchElementException если список пуст.
+     */
+    public E getFirst() {
+        if (size == 0) {
+            throw new NoSuchElementException("List is empty");
+        }
+        return elementData(0);
+    }
+
+    /**
+     * Возвращает последний элемент списка.
+     * @throws NoSuchElementException если список пуст.
+     */
+    public E getLast() {
+        if (size == 0) {
+            throw new NoSuchElementException("List is empty");
+        }
+        return elementData(size - 1);
     }
 
     // --- Вспомогательные методы ---
