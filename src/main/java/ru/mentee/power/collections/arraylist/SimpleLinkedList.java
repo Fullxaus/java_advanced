@@ -1,9 +1,10 @@
 package ru.mentee.power.collections.arraylist;
 
-import java.util.NoSuchElementException;
-import java.util.Objects;
+import org.jetbrains.annotations.NotNull;
 
-public class SimpleLinkedList<E> {
+import java.util.*;
+
+public class SimpleLinkedList<E> implements List {
     private int size = 0;
     private Node<E> first;
     private Node<E> last;
@@ -36,8 +37,8 @@ public class SimpleLinkedList<E> {
         return size == 0;
     }
 
-    public boolean add(E e) {
-        linkLast(e);
+    public boolean add(Object e) {
+        linkLast((E) e);
         return true;
     }
 
@@ -46,9 +47,44 @@ public class SimpleLinkedList<E> {
         return node(index).item;
     }
 
+    @Override
+    public Object set(int index, Object element) {
+        return null;
+    }
+
+    @Override
+    public void add(int index, Object element) {
+
+    }
+
     public E remove(int index) {
         checkElementIndex(index);
         return unlink(node(index));
+    }
+
+    @Override
+    public int indexOf(Object o) {
+        return 0;
+    }
+
+    @Override
+    public int lastIndexOf(Object o) {
+        return 0;
+    }
+
+    @Override
+    public @NotNull ListIterator listIterator() {
+        return null;
+    }
+
+    @Override
+    public @NotNull ListIterator listIterator(int index) {
+        return null;
+    }
+
+    @Override
+    public @NotNull List subList(int fromIndex, int toIndex) {
+        return List.of();
     }
 
     public boolean remove(Object o) {
@@ -61,6 +97,31 @@ public class SimpleLinkedList<E> {
         return false;
     }
 
+    @Override
+    public boolean addAll(@NotNull Collection c) {
+        return false;
+    }
+
+    @Override
+    public boolean addAll(int index, @NotNull Collection c) {
+        return false;
+    }
+
+    @Override
+    public boolean retainAll(@NotNull Collection c) {
+        return false;
+    }
+
+    @Override
+    public boolean removeAll(@NotNull Collection c) {
+        return false;
+    }
+
+    @Override
+    public boolean containsAll(@NotNull Collection c) {
+        return false;
+    }
+
     public boolean contains(Object o) {
         for (Node<E> x = first; x != null; x = x.next) {
             if (Objects.equals(o, x.item)) {
@@ -68,6 +129,21 @@ public class SimpleLinkedList<E> {
             }
         }
         return false;
+    }
+
+    @Override
+    public @NotNull Iterator iterator() {
+        return null;
+    }
+
+    @Override
+    public @NotNull Object[] toArray() {
+        return new Object[0];
+    }
+
+    @Override
+    public @NotNull Object[] toArray(@NotNull Object[] a) {
+        return new Object[0];
     }
 
     public void clear() {
@@ -84,12 +160,12 @@ public class SimpleLinkedList<E> {
 
 // --- Методы Deque ---
 
-    public void addFirst(E e) {
-        linkFirst(e);
+    public void addFirst(Object e) {
+        linkFirst((E) e);
     }
 
-    public void addLast(E e) {
-        linkLast(e);
+    public void addLast(Object e) {
+        linkLast((E) e);
     }
 
     public E getFirst() {
