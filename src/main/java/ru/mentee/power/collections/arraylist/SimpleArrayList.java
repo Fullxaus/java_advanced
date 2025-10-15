@@ -1,11 +1,10 @@
 package ru.mentee.power.collections.arraylist;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Objects;
+import org.jetbrains.annotations.NotNull;
 
-public class SimpleArrayList<E> {
+import java.util.*;
+
+public class SimpleArrayList<E> implements List {
 
     private static final int DEFAULT_CAPACITY = 10;
     private static final Object[] EMPTY_ELEMENTDATA = {}; // Для оптимизации
@@ -44,6 +43,11 @@ public class SimpleArrayList<E> {
         return indexOf(o) >= 0;
     }
 
+    @Override
+    public @NotNull Iterator iterator() {
+        return null;
+    }
+
     public int indexOf(Object o) {
         if (o == null) {
             for (int i = 0; i < size; i++) {
@@ -70,25 +74,43 @@ public class SimpleArrayList<E> {
         return -1;
     }
 
+    @Override
+    public @NotNull ListIterator listIterator() {
+        return null;
+    }
+
+    @Override
+    public @NotNull ListIterator listIterator(int index) {
+        return null;
+    }
+
+    @Override
+    public @NotNull List subList(int fromIndex, int toIndex) {
+        return List.of();
+    }
+
     public E get(int index) {
         rangeCheck(index);
         return elementData(index);
     }
 
-    public E set(int index, E element) {
+
+
+    public E set(int index, Object element) {
         rangeCheck(index);
         E oldValue = elementData(index);
         elementData[index] = element;
         return oldValue;
     }
 
-    public boolean add(E element) {
+
+    public boolean add(Object element) {
         ensureCapacityInternal(size + 1);
         elementData[size++] = element;
         return true;
     }
 
-    public void add(int index, E element) {
+    public void add(int index, Object element) {
         rangeCheckForAdd(index);
         ensureCapacityInternal(size + 1);
         System.arraycopy(elementData, index, elementData, index + 1, size - index);
@@ -116,6 +138,31 @@ public class SimpleArrayList<E> {
         return false;
     }
 
+    @Override
+    public boolean addAll(@NotNull Collection c) {
+        return false;
+    }
+
+    @Override
+    public boolean addAll(int index, @NotNull Collection c) {
+        return false;
+    }
+
+    @Override
+    public boolean retainAll(@NotNull Collection c) {
+        return false;
+    }
+
+    @Override
+    public boolean removeAll(@NotNull Collection c) {
+        return false;
+    }
+
+    @Override
+    public boolean containsAll(@NotNull Collection c) {
+        return false;
+    }
+
     public void clear() {
         for (int i = 0; i < size; i++) {
             elementData[i] = null;
@@ -127,6 +174,12 @@ public class SimpleArrayList<E> {
         return Arrays.copyOf(elementData, size);
     }
 
+
+
+    @Override
+    public @NotNull Object[] toArray(@NotNull Object[] a) {
+        return new Object[0];
+    }
 
 
     /**
