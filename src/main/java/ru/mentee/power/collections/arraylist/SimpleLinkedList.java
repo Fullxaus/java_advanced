@@ -29,11 +29,11 @@ public class SimpleLinkedList<E> implements List {
 
 // --- Основные методы List ---
 
-    public int size() {
+        public int size() {
         return size;
     }
 
-    public boolean isEmpty() {
+        public boolean isEmpty() {
         return size == 0;
     }
 
@@ -42,7 +42,7 @@ public class SimpleLinkedList<E> implements List {
         return true;
     }
 
-    public E get(int index) {
+        public E get(int index) {
         checkElementIndex(index);
         return node(index).item;
     }
