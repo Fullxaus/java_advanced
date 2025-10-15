@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class SimpleArrayList<E> implements List {
+    public class SimpleArrayList<E> implements List {
 
     private static final int DEFAULT_CAPACITY = 10;
     private static final Object[] EMPTY_ELEMENTDATA = {}; // Для оптимизации
