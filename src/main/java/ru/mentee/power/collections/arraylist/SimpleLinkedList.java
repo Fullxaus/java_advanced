@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-    public class SimpleLinkedList<E> implements List {
+public class SimpleLinkedList<E> implements List {
     private int size = 0;
     private Node<E> first;
     private Node<E> last;
@@ -37,7 +37,7 @@ import java.util.*;
         return size == 0;
     }
 
-        public boolean add(Object e) {
+    public boolean add(Object e) {
         linkLast((E) e);
         return true;
     }
@@ -48,12 +48,12 @@ import java.util.*;
     }
 
     @Override
-        public Object set(int index, Object element) {
+    public Object set(int index, Object element) {
         return null;
     }
 
     @Override
-        public void add(int index, Object element) {
+    public void add(int index, Object element) {
 
     }
 
