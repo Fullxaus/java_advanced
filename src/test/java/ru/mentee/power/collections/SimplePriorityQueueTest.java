@@ -3,10 +3,7 @@ package ru.mentee.power.collections;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.util.Comparator;
-
-
 import static org.assertj.core.api.Assertions.*;
 
 @DisplayName("Тесты для SimplePriorityQueue")
@@ -113,8 +110,6 @@ public class SimplePriorityQueueTest {
             assertThatCode(() -> small.offer(n - finalI)).doesNotThrowAnyException();
         }
         assertThat(small.size()).isEqualTo(n);
-
-        // Проверим корректность порядка (min-heap)
         int prev = -1;
         for (int i = 0; i < n; i++) {
             Integer polled = small.poll();

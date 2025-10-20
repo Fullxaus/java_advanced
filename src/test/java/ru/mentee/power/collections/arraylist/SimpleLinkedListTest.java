@@ -13,7 +13,7 @@ public class SimpleLinkedListTest {
     @BeforeEach
     void setUp() {
         list = new SimpleLinkedList<>();
-        // Для большинства тестов начальное состояние — пустой список.
+
     }
 
     @Test
@@ -34,7 +34,7 @@ public class SimpleLinkedListTest {
         list.addFirst(5);
         list.addFirst(3);
         assertThat(list.getFirst()).isEqualTo(3);
-        // Проверим порядок через get()
+
         assertThat(list.get(0)).isEqualTo(3);
         assertThat(list.get(1)).isEqualTo(5);
         assertThat(list.get(2)).isEqualTo(10);
@@ -72,7 +72,7 @@ public class SimpleLinkedListTest {
         assertThatExceptionOfType(IndexOutOfBoundsException.class)
                 .isThrownBy(() -> list.get(-1));
         assertThatExceptionOfType(IndexOutOfBoundsException.class)
-                .isThrownBy(() -> list.get(2)); // valid indices: 0,1
+                .isThrownBy(() -> list.get(2));
     }
 
     @Test
@@ -108,7 +108,6 @@ public class SimpleLinkedListTest {
         assertThat(removed).isTrue();
         assertThat(list.size()).isEqualTo(2);
         assertThat(list.contains(6)).isFalse();
-        // удаление отсутствующего элемента
         assertThat(list.remove((Integer)42)).isFalse();
     }
 
