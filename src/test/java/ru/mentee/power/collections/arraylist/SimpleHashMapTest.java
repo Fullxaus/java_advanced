@@ -86,11 +86,7 @@ public class SimpleHashMapTest {
     @Test
     @DisplayName("Обработка коллизий: добавление элементов с одинаковым индексом корзины")
     void shouldHandleCollisions() {
-        // Создадим ключи с разными строками, но принудительно заставим попадать в одну корзину:
-        // Для этого воспользуемся поведения indexFor(h, length) = h & (length - 1).
-        // Мы не можем напрямую задать длину таблицы, но можно подобрать разные строки у которых
-        // hash(...) дают одинаковый значение по младшим битам. Упрощенно — добавим много элементов,
-        // затем проверим, что все доступны (это косвенная проверка коллизий).
+
         for (int i = 0; i < 50; i++) {
             map.put("key-coll-" + i, i);
         }
@@ -103,9 +99,9 @@ public class SimpleHashMapTest {
     @Test
     @DisplayName("resize() должен корректно перестраивать таблицу при росте")
     void resizeShouldRehashTableCorrectly() {
-        // Создадим карту с маленькой начальной емкостью, чтобы resize сработал быстро.
+
         SimpleHashMap<String, Integer> small = new SimpleHashMap<>(4, 0.75f);
-        int count = 20; // больше, чем threshold (4 * 0.75 = 3), чтобы несколько раз расширилось
+        int count = 20;
         for (int i = 0; i < count; i++) {
             small.put("k" + i, i);
         }

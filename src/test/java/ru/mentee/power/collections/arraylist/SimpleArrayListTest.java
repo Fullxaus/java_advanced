@@ -5,8 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.*;
 
-import java.util.Arrays;
-import java.util.List;
+
 
 @DisplayName("Тесты для SimpleArrayList")
 public class SimpleArrayListTest {
@@ -30,14 +29,12 @@ public class SimpleArrayListTest {
         assertThat(list.get(1)).isEqualTo("B");
         assertThat(list.get(2)).isEqualTo("C");
     }
-
     @Test
     @DisplayName("Проверка роста внутреннего массива")
     void shouldGrowInternalArray() {
         SimpleArrayList<Integer> intList = new SimpleArrayList<>(2);
         intList.add(1);
         intList.add(2);
-        // Добавляем больше элементов, чем начальная емкость (2)
         intList.add(3);
         intList.add(4);
         intList.add(5);
@@ -87,13 +84,10 @@ public class SimpleArrayListTest {
         list.add("C");
 
         boolean removed = list.remove("B");
-
         assertThat(removed).isTrue();
         assertThat(list.size()).isEqualTo(2);
         assertThat(list.get(0)).isEqualTo("A");
         assertThat(list.get(1)).isEqualTo("C");
-
-        // Попытка удалить несуществующее значение
         boolean removedMissing = list.remove("X");
         assertThat(removedMissing).isFalse();
     }
@@ -108,12 +102,8 @@ public class SimpleArrayListTest {
 
         assertThat(list.indexOf("A")).isEqualTo(0);
         assertThat(list.lastIndexOf("A")).isEqualTo(2);
-
-        // Поиск null
         assertThat(list.indexOf(null)).isEqualTo(3);
         assertThat(list.lastIndexOf(null)).isEqualTo(3);
-
-        // Отсутствующий элемент
         assertThat(list.indexOf("X")).isEqualTo(-1);
         assertThat(list.lastIndexOf("X")).isEqualTo(-1);
     }
@@ -143,7 +133,7 @@ public class SimpleArrayListTest {
 
         assertThat(list.size()).isEqualTo(0);
         assertThat(list.isEmpty()).isTrue();
-        // Добавление после очистки должно работать
+
         list.add("Z");
         assertThat(list.size()).isEqualTo(1);
         assertThat(list.get(0)).isEqualTo("Z");
@@ -191,32 +181,21 @@ public class SimpleArrayListTest {
     @Test
     @DisplayName("Обработка некорректных индексов")
     void shouldThrowIndexOutOfBoundsException() {
-        // get on empty
+
         assertThatExceptionOfType(IndexOutOfBoundsException.class)
                 .isThrownBy(() -> list.get(0));
-
-        // remove on empty
         assertThatExceptionOfType(IndexOutOfBoundsException.class)
                 .isThrownBy(() -> list.remove(0));
-
-        // set on empty
         assertThatExceptionOfType(IndexOutOfBoundsException.class)
                 .isThrownBy(() -> list.set(0, "X"));
-
-        // add at invalid negative index
         assertThatExceptionOfType(IndexOutOfBoundsException.class)
                 .isThrownBy(() -> list.add(-1, "X"));
-
-        // add at index > size
         assertThatExceptionOfType(IndexOutOfBoundsException.class)
                 .isThrownBy(() -> list.add(1, "X"));
-
-        // valid add at size should not throw
         list.add("A");
-        list.add(1, "B"); // should succeed
+        list.add(1, "B");
         assertThat(list.size()).isEqualTo(2);
     }
-
     @Test
     @DisplayName("Конструктор должен выбрасывать исключение при отрицательной емкости")
     void constructorShouldThrowExceptionForNegativeCapacity() {

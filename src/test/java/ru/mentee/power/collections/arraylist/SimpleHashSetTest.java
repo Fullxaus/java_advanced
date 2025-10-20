@@ -61,7 +61,6 @@ public class SimpleHashSetTest {
         assertThat(set.contains("exists")).isTrue();
         assertThat(set.contains("notExists")).isFalse();
     }
-
     @Test
     @DisplayName("clear() должен удалять все элементы")
     void clearShouldRemoveAllElements() {
