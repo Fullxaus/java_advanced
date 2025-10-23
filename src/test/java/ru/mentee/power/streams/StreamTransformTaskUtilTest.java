@@ -34,7 +34,7 @@ public class StreamTransformTaskUtilTest {
 
     @Test
     @DisplayName("Задача 1: Поиск книг жанра 'Фантастика' выпущенных позже 2000 года")
-    void findSciFiTitlesAfter2000_ShouldReturnCorrectTitles() {
+     void findSciFiTitlesAfter2000_ShouldReturnCorrectTitles() {
         List<String> result = StreamTransformTaskUtil.findSciFiTitlesAfter2000(testLibrary);
         assertThat(result).isNotNull().containsAnyOf("SciFi_2001", "SciFi_Comedy_2005");
     }

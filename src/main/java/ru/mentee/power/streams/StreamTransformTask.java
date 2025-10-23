@@ -27,17 +27,17 @@ public class StreamTransformTask {
         System.out.println("--- Исходная библиотека ---");
         library.forEach(System.out::println);
 
-        // --- Задача 1: Названия книг (Фантастика, >2000г) ---
+
         System.out.println("\n--- Названия книг (Фантастика, >2000г) ---");
         List<String> scienceFictionBooksAfter2000 = StreamTransformTaskUtil.findSciFiTitlesAfter2000(library);
         System.out.println(scienceFictionBooksAfter2000);
 
-        // --- Задача 2: Уникальные авторы (отсортированные) ---
+
         System.out.println("\n--- Уникальные авторы (отсортированные) ---");
         List<String> uniqueAuthorsSorted = StreamTransformTaskUtil.findUniqueAuthors(library);
         System.out.println(uniqueAuthorsSorted);
 
-        // --- Задача 3: Уникальные жанры (в верхнем регистре) ---
+
         System.out.println("\n--- Уникальные жанры (в верхнем регистре) ---");
         Set<String> uniqueGenresUpperCase = StreamTransformTaskUtil.findUniqueGenresUpperCase(library);
         System.out.println(uniqueGenresUpperCase);

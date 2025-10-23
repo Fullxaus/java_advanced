@@ -21,6 +21,7 @@ public class StreamTransformTaskUtil {
         if (books == null) {
             return List.of();
         }
+
         return books.stream()
                 .map(Book::getAuthor)
                 .distinct()
