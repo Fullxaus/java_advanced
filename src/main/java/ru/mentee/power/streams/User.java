@@ -1,6 +1,6 @@
 package ru.mentee.power.streams;
 
-public class User {
+ public class User {
     private String username;
     private String email;
     private boolean isActive;
