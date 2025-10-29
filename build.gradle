@@ -12,12 +12,18 @@ repositories {
 }
 
 dependencies {
+
     implementation "org.jetbrains:annotations:24.0.1"
 
     testImplementation platform('org.junit:junit-bom:5.10.0')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
-    testImplementation 'org.assertj:assertj-core:3.21.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params'
+    testImplementation 'org.mockito:mockito-core:5.0.0'
+    testImplementation 'org.assertj:assertj-core:3.22.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.0.0'
+    testImplementation 'org.mockito:mockito-inline:5.0.0'
+
 }
 
 java {
@@ -28,6 +34,8 @@ java {
 test {
     useJUnitPlatform()
     finalizedBy tasks.named('jacocoTestReport')
+    jvmArgs = ['-XX:+EnableDynamicAgentLoading']
+    jvmArgs = ['-XX:+EnableDynamicAgentLoading', '-Djdk.instrument.traceUsage']
 }
 
 // ----- JaCoCo -----
