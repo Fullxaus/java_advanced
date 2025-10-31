@@ -22,7 +22,6 @@ public class TelegramNotificationTest {
     void restoreStreams() {
         System.setOut(originalOut);
     }
-
     @Test
     @DisplayName("Должен отправлять Telegram уведомление")
     void shouldSendTelegramNotification() {
