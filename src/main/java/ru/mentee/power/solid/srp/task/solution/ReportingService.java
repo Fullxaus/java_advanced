@@ -36,6 +36,7 @@ public class ReportingService {
 
         ReportingService service = new ReportingService(filter, formatter, printer);
         service.generateAndPrintReport(sampleData, 100.0);
+
     }
 }
 

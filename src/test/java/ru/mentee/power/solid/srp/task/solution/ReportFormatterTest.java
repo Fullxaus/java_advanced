@@ -7,6 +7,7 @@ import java.util.List;
 
 public class ReportFormatterTest {
 
+
     private final ReportFormatter reportFormatter = new ReportFormatter();
 
     @Test

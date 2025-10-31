@@ -31,6 +31,7 @@ public class ReportPrinterTest {
         reportPrinter.printToConsole(report);
         String expectedOutput = "ReportPrinter: Вывод отчета в консоль:" + System.lineSeparator() + report + System.lineSeparator();
         assertThat(outContent.toString()).isEqualTo(expectedOutput);
+
     }
 }
 

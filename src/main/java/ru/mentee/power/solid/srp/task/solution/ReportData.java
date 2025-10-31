@@ -15,5 +15,6 @@ public class ReportData {
                 "name='" + name + '\'' +
                 ", value=" + value +
                 '}';
+
     }
 }
