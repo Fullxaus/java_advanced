@@ -26,7 +26,6 @@ public class ReportingServiceTest {
     @InjectMocks
     private ReportingService reportingService;
 
-
     @Test
     @DisplayName("Должен вызывать все компоненты в правильной последовательности")
     void shouldCallAllComponentsInOrder() {

@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 public class DataFilterTest {
-
     private DataFilter dataFilter = new DataFilter();
 
     @Test

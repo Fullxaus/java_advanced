@@ -15,6 +15,7 @@ public class ReportFormatter {
         }
         sb.append("--- Конец отчета ---");
         return sb.toString();
+
     }
 }
 
