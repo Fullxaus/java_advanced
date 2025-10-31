@@ -1,6 +1,7 @@
 package ru.mentee.power.solid.srp.task.solution;
 
 public class ReportData {
+
     private String name;
     private double value;
 
