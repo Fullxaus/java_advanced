@@ -22,7 +22,6 @@ public class SmsNotificationTest {
     void restoreStreams() {
         System.setOut(originalOut);
     }
-
     @Test
     @DisplayName("Должен отправлять SMS уведомление")
     void shouldSendSmsNotification() {

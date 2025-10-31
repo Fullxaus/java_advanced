@@ -29,7 +29,7 @@ public class EmailNotificationTest {
         String message = "Тест Email";
         String recipient = "test@example.com";
         emailNotification.send(message, recipient);
-        // @TODO: Проверьте, что консольный вывод содержит корректное сообщение об отправке Email
+
         assertThat(outContent.toString()).contains("Отправка EMAIL сообщения '" + message + "' получателю " + recipient);
     }
 }
