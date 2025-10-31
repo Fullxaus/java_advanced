@@ -3,7 +3,6 @@ package ru.mentee.power.solid.srp.task.solution;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.util.List;
 
 public class ReportFormatterTest {
