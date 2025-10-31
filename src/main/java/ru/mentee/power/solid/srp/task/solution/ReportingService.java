@@ -14,6 +14,7 @@ public class ReportingService {
     }
 
     public void generateAndPrintReport(List<ReportData> allData, double threshold) {
+
         List<ReportData> filtered = dataFilter.filterByThreshold(allData, threshold);
         String report = reportFormatter.formatToString(filtered);
         reportPrinter.printToConsole(report);
@@ -27,9 +28,11 @@ public class ReportingService {
                 new ReportData("Гамма SRP", 210.99)
         );
 
+
         DataFilter filter = new DataFilter();
         ReportFormatter formatter = new ReportFormatter();
         ReportPrinter printer = new ReportPrinter();
+
 
         ReportingService service = new ReportingService(filter, formatter, printer);
         service.generateAndPrintReport(sampleData, 100.0);

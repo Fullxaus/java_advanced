@@ -23,7 +23,6 @@ public class ReportPrinterTest {
     void restoreStreams() {
         System.setOut(originalOut);
     }
-
     @Test
     @DisplayName("Должен выводить отчет в консоль")
     void shouldPrintReportToConsole() {
