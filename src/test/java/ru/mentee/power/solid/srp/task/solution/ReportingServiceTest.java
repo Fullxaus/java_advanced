@@ -17,7 +17,7 @@ import static org.mockito.Mockito.*;
 public class ReportingServiceTest {
 
     @Mock
-    private DataFilterInterface mockDataFilter;
+    private DataFilter mockDataFilter;
 
     @Mock
     private ReportFormatter mockReportFormatter;

@@ -27,6 +27,7 @@ public class ReportPrinterTest {
     @Test
     @DisplayName("Должен выводить отчет в консоль")
     void shouldPrintReportToConsole() {
+
         String report = "Тестовый отчет для вывода.";
         reportPrinter.printToConsole(report);
         String expectedOutput = "ReportPrinter: Вывод отчета в консоль:" + System.lineSeparator() + report + System.lineSeparator();
