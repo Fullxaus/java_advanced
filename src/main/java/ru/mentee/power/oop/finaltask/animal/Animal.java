@@ -14,25 +14,19 @@ public abstract class Animal {
         this.name = name;
         this.age = age;
     }
-
-
     public String getName() {
         return name;
     }
-
     public int getAge() {
         return age;
     }
-
     // стратегии
     public void setMoveBehavior(MoveBehavior moveBehavior) {
         this.moveBehavior = moveBehavior;
     }
-
     public void setSoundBehavior(SoundBehavior soundBehavior) {
         this.soundBehavior = soundBehavior;
     }
-
     public void performMove() {
         if (moveBehavior != null) {
             moveBehavior.move();
@@ -40,7 +34,6 @@ public abstract class Animal {
             System.out.println(name + " has no move behavior.");
         }
     }
-
     public void performSound() {
         if (soundBehavior != null) {
             soundBehavior.makeSound();
@@ -48,6 +41,5 @@ public abstract class Animal {
             System.out.println(name + " has no sound behavior.");
         }
     }
-
     public abstract void displayInfo();
 }
