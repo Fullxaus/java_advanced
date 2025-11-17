@@ -1,6 +1,6 @@
 package ru.mentee.power.parsing;
 
-import org.junit.jupiter.api.Disabled;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +11,6 @@ public class XmlDataConverterTest {
     private final XmlDataConverter converter = new XmlDataConverter();
 
     @Test
-    @Disabled("Реализация XML сериализации/десериализации не требуется в полном объеме или может быть сложной без JAXB")
     @DisplayName("Тест для XML сериализации (если будет реализована)")
     void shouldSerializeConfigurationDataToXml() {
          ConfigurationData data = new ConfigurationData("http://xml.test.com", 8888, List.of("XML_F1"));
