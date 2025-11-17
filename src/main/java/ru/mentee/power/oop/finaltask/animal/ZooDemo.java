@@ -14,7 +14,6 @@ public class ZooDemo {
         animals.add(new Eagle("Eagle", 3));
         animals.add(new Snake("Snake", 2));
 
-
         for (Animal a : animals) {
             a.displayInfo();
             a.performMove();
@@ -22,7 +21,6 @@ public class ZooDemo {
             System.out.println();
         }
 
-        // Демонстрация динамической смены поведения
         System.out.println("=== Динамическая смена поведения ===");
         Animal snake = animals.stream()
                 .filter(a -> a instanceof Animal)
@@ -35,7 +33,6 @@ public class ZooDemo {
             snake.performMove();
             snake.performSound();
 
-            // Змея научилась летать и чирикать
             snake.setMoveBehavior(new FlyBehavior());
             snake.setSoundBehavior(new ChirpBehavior());
 

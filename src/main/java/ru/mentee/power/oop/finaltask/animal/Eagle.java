@@ -2,8 +2,6 @@ package ru.mentee.power.oop.finaltask.animal;
 
 import ru.mentee.power.oop.finaltask.behavior.impl.ChirpBehavior;
 import ru.mentee.power.oop.finaltask.behavior.impl.FlyBehavior;
-
-
 public class Eagle extends Bird {
 
     private String maneColor;
@@ -13,7 +11,6 @@ public class Eagle extends Bird {
         setMoveBehavior(new FlyBehavior());
         setSoundBehavior(new ChirpBehavior());
     }
-
     public String getManeColor() {
         return maneColor;
     }
