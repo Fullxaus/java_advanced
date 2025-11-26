@@ -12,7 +12,6 @@ public class XmlDataConverterTest {
     private final XmlDataConverter converter = new XmlDataConverter();
 
     @Test
-    @Disabled
     @DisplayName("Тест для XML сериализации (если будет реализована)")
     void shouldSerializeConfigurationDataToXml() {
          ConfigurationData data = new ConfigurationData("http://xml.test.com", 8888, List.of("XML_F1"));
